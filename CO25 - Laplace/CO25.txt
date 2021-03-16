@@ -1,0 +1,19 @@
+Mon Dec  9 11:58:18 2019: took the given function header and copied it into MATLAB, changing author and date
+Mon Dec  9 12:10:31 2019: Using equation 5 from lab script, wrote basic calculation that needed computing
+Mon Dec  9 12:17:02 2019: Wrote a seperate function, R(p,x,y) to calculate the residual values
+Mon Dec  9 12:28:36 2019: Created a while loop in which the itterations will occur. Also added the functionality for the computations to end after the itteration limit has been reached.
+Mon Dec  9 12:30:18 2019: Wrote the for loops that will allow the computation to occur throughout the grid. This hould allow for the program to now be tested.
+Mon Dec  9 13:07:51 2019: Added the code to keep track of the historical recorded values on the grid
+Mon Dec  9 13:50:21 2019: tested the code on a grid with the boundary conditions of 1s along two adjacent sides and 0s on the other. Using a countour plot, the surface formed seemed reasonable, and the psi matrix had the required transpose symettry that this solution required.
+Mon Dec  9 13:50:48 2019: However, there was a problem that all the recorded historical values just gave 0
+Mon Dec  9 13:59:31 2019: This problem occured because when trying to pick out specific values of psi, parsing a vector into the index argument would be treated as two seperate serial integers (i.e, the 4th and 2nd element of psi would be picked, instead of that at (4,2))
+Mon Dec  9 14:02:24 2019: the solution was to call each element of the vector seperately (messy, but works) and convergence of the values of a 7x7 grid was shown to occur over ~13 itterations
+Mon Dec  9 14:09:32 2019: [CREATED PLOT OF CONVERGENCE OF HISTORICAL VALUES AND CONTOUR PLOT OF PSI FOR REPORT, UNDER firstPlot name]
+Wed Dec 11 16:02:36 2019: Determined solution from lab script to be sin(x/a)sinh(y/a), and will now attempt to test this
+Wed Dec 11 16:08:09 2019: Before running the sunction, I checked to make sure analyticPsi and initPsi had same boundary conditions
+Wed Dec 11 16:29:08 2019: Ran the laplace_solver, compared and plotted two solutions, and differences between them
+Wed Dec 11 16:30:15 2019: determined average difference between calculated and analytic solution as mean(mean(psi - analyticPsi)) = -0.0070
+Wed Dec 11 16:35:36 2019: Also recorded and plotted historical values
+Wed Dec 11 16:36:23 2019: For these caluclations, \alpha = 1.35, itterations=100
+Wed Dec 11 16:48:38 2019: Added in functionality to terminate after fewer itterations than planned
+Wed Dec 11 18:35:05 2019: wrote function to help with analysis of different alpha values n things

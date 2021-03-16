@@ -1,0 +1,14 @@
+Tue Jan 21 10:49:52 2020: Started by deriving taylor expansion on paper, as described in lab script
+Tue Jan 21 10:50:34 2020: I decided not to roll with an even or odd one, but a more general one in terms of both psi0 and dpsi0, so that either case drops out in that specific scenario
+Tue Jan 21 10:52:11 2020: I had some problems with differentiating anonymous functions, but i found a solution on mathworks and adapted it to suit my needs
+Tue Jan 21 11:13:28 2020: Tested the numerov function for n = 1,2,5. Seemed to work very well
+Tue Jan 21 11:13:55 2020: Starting on the function to compare the analytic and caluclated solutions.
+Tue Jan 21 14:37:40 2020: Written code to determine parity of analytical solution and then determine which hermite polynomial should be used. Depending on parity, the normalisation process will be different.
+Tue Jan 21 14:47:13 2020: I did this by determining how to match either the differential or the value of the analytic function at x=0
+Tue Jan 21 15:10:02 2020: I had some problems in my function handles, but that came from not realising I was raising vectors to powers not element-wise
+Tue Jan 21 15:17:19 2020: I had a problem running my script. CalculatedPsi kept coming back as an empty value, and it was because I was passing in f and x as arguments the wrong way around in solve_numerov
+Tue Jan 21 15:38:05 2020: having ran and tested my integratePsi function, i'm now attempting the find_oscillator_eigenvalue problem
+Tue Jan 21 17:01:37 2020: determined a way to ensure right boundary conditions when finding eigenvalues. Struggling to cod efficient solution to determining whether E is higher or lower thatn E0 and by how much
+Tue Jan 21 17:32:35 2020: Managed to come up with a general solution to the itteration problem that is robust no matter the starting point
+Tue Jan 21 17:45:39 2020: Ran a test to see what values of E converge to what values. Plot currently generating, its taking roughly 10 minuts to generate values for x = 0:0.05:10. This is unsurprising given many of these values will lie far from any eigenvalues (roughly half of them).
+Tue Jan 21 21:05:09 2020: Observed the plot not to be properly stepped, but to have some anomalous bumps in it. I think this is due to the selection of odd and even solutions that then may interact in weird ways when scanning through the different energies.
